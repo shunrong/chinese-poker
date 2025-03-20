@@ -56,7 +56,8 @@ export class Deck {
    */
   deal(count: number): Card[] {
     if (count > this._cards.length) {
-      throw new Error(`牌组中只剩下 ${this._cards.length} 张牌`);
+      // 当剩余牌不足时，返回所有剩余的牌
+      return this._cards.splice(0, this._cards.length);
     }
     return this._cards.splice(0, count);
   }

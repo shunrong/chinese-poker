@@ -31,8 +31,11 @@ export class CardCombo {
   private _mainValue: number = 0;  // 主牌值（用于比较大小）
 
   constructor(cards: Card[] = []) {
-    if (cards.length > 0) {
-      this.setCards(cards);
+    this._cards = [...cards];
+    if (this._cards.length === 0) {
+      this._type = ComboType.PASS;
+    } else {
+      this.analyzeComboType();
     }
   }
 
@@ -41,7 +44,11 @@ export class CardCombo {
    */
   setCards(cards: Card[]): void {
     this._cards = [...cards];
-    this.analyzeComboType();
+    if (this._cards.length === 0) {
+      this._type = ComboType.PASS;
+    } else {
+      this.analyzeComboType();
+    }
   }
 
   /**
@@ -83,8 +90,8 @@ export class CardCombo {
    * 分析牌组的牌型
    */
   private analyzeComboType(): void {
+    // 对于空牌组，在构造函数和setCards中已经设置为PASS
     if (this._cards.length === 0) {
-      this._type = ComboType.PASS;
       return;
     }
 
