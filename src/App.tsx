@@ -1,7 +1,7 @@
 import { ConfigProvider, theme } from 'antd';
 import { StyleProvider } from 'antd-style';
 import zhCN from 'antd/locale/zh_CN';
-import { GamePage } from './presentation/pages/GamePage';
+import { GamePage } from './pages/Game';
 
 const App: React.FC = () => {
   return (

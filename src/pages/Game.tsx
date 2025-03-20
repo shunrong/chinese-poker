@@ -1,12 +1,11 @@
-import { Alert, Button, Layout, Space, Typography, Tag, Steps, Result } from 'antd';
-import { createStyles } from 'antd-style';
-import { useGameStore } from '../../application/GameStore';
-import { GameState } from '../../domain/models/Game';
-import { PlayerRole } from '../../domain/models/Player';
-import { PlayerComponent, PlayerPosition } from '../components/PlayerComponent';
-import { CardComponent } from '../components/CardComponent';
-import { TrophyOutlined } from '@ant-design/icons';
 import { useMemo } from 'react';
+import { Alert, Button, Layout, Space, Typography, Tag, Steps, Result } from 'antd';
+import { TrophyOutlined } from '@ant-design/icons';
+import { createStyles } from 'antd-style';
+import { GameState, PlayerRole } from '../sdk';
+import { PlayerArea, PokerCard, PlayerPosition } from '../components';
+import { useGameStore } from '../store/GameStore';
+
 
 const { Title, Text, Paragraph } = Typography;
 const { Content, Header } = Layout;
@@ -367,7 +366,7 @@ export const GamePage: React.FC = () => {
             <Title level={5} style={{ margin: 0 }}>底牌</Title>
             <div style={{ display: 'flex', gap: '2px' }}>
               {landlordCards.map((card, index) => (
-                <CardComponent 
+                <PokerCard 
                   key={index} 
                   card={card} 
                   isInteractive={false}
@@ -400,7 +399,7 @@ export const GamePage: React.FC = () => {
             </Title>
             <div className={styles.cardsContainer}>
               {lastPlayedCards.map((card, index) => (
-                <CardComponent 
+                <PokerCard 
                   key={index} 
                   card={card} 
                   isInteractive={false}
@@ -521,19 +520,19 @@ export const GamePage: React.FC = () => {
         {/* 底部玩家（当前回合玩家） */}
         <div className={styles.playerBottom}>
           <div className={styles.playerLabel}>{arrangedPlayers[0].name}</div>
-          <PlayerComponent player={arrangedPlayers[0]} position={PlayerPosition.BOTTOM} />
+          <PlayerArea player={arrangedPlayers[0]} position={PlayerPosition.BOTTOM} />
         </div>
         
         {/* 左侧玩家 */}
         <div className={styles.playerLeft}>
           <div className={styles.playerLabel}>{arrangedPlayers[1].name}</div>
-          <PlayerComponent player={arrangedPlayers[1]} position={PlayerPosition.LEFT} />
+          <PlayerArea player={arrangedPlayers[1]} position={PlayerPosition.LEFT} />
         </div>
         
         {/* 右侧玩家 */}
         <div className={styles.playerRight}>
           <div className={styles.playerLabel}>{arrangedPlayers[2].name}</div>
-          <PlayerComponent player={arrangedPlayers[2]} position={PlayerPosition.RIGHT} />
+          <PlayerArea player={arrangedPlayers[2]} position={PlayerPosition.RIGHT} />
         </div>
       </>
     );

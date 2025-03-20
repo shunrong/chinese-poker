@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style';
-import { Card as CardModel, Suit, SpecialCardType } from '../../domain/models/Card';
+import { Card, Suit, SpecialCardType } from '../sdk';
 
 const useStyles = createStyles(({ css, token }) => ({
   card: css`
@@ -123,16 +123,16 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-interface CardProps {
-  card: CardModel;
-  onClick?: (card: CardModel) => void;
+interface PokerCardProps {
+  card: Card;
+  onClick?: (card: Card) => void;
   isInteractive?: boolean; // 是否可交互（手牌可交互，底牌和打出的牌不可交互）
   isPlayed?: boolean; // 是否是已打出的牌
   isSidePosition?: boolean; // 是否是侧边位置的牌
   showBack?: boolean; // 是否显示牌背面
 }
 
-export const CardComponent: React.FC<CardProps> = ({ 
+export const PokerCard: React.FC<PokerCardProps> = ({ 
   card, 
   onClick,
   isInteractive = true, // 默认为可交互

@@ -1,8 +1,6 @@
 import { create } from 'zustand';
-import { Card } from '../domain/models/Card';
-import { CardCombo, ComboType } from '../domain/models/CardCombo';
-import { Game, GameState, PlayResult } from '../domain/models/Game';
-import { Player, PlayerRole } from '../domain/models/Player';
+import { Card, CardCombo, ComboType, Game, GameState, PlayResult, Player, PlayerRole } from '../sdk';
+
 
 /**
  * 游戏Store接口

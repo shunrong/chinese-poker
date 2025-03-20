@@ -1,12 +1,9 @@
 import { Button, Space, Tooltip } from 'antd';
-import { createStyles } from 'antd-style';
-import { Player } from '../../domain/models/Player';
-import { useGameStore } from '../../application/GameStore';
-import { CardComponent } from './CardComponent';
-import { GameState } from '../../domain/models/Game';
-import { CardCombo, ComboType } from '../../domain/models/CardCombo';
 import { BulbOutlined } from '@ant-design/icons';
-import { Card } from '../../domain/models/Card';
+import { createStyles } from 'antd-style';
+import { Card, Player, GameState, CardCombo, ComboType } from '../sdk';
+import { useGameStore } from '../store/GameStore';
+import { PokerCard } from './PokerCard';
 
 const useStyles = createStyles(({ css, token }) => ({
   playerArea: css`
@@ -148,12 +145,12 @@ export enum PlayerPosition {
   RIGHT,   // 右侧玩家
 }
 
-interface PlayerProps {
+interface PlayerAreaProps {
   player: Player;
   position?: PlayerPosition; // 玩家位置
 }
 
-export const PlayerComponent: React.FC<PlayerProps> = ({ 
+export const PlayerArea: React.FC<PlayerAreaProps> = ({ 
   player,
   position = PlayerPosition.BOTTOM  // 默认为底部玩家
 }) => {
@@ -393,7 +390,7 @@ export const PlayerComponent: React.FC<PlayerProps> = ({
       return (
         <div className={containerClassName}>
           {cardsToRender.map((card) => (
-            <CardComponent
+            <PokerCard
               key={card.display}
               card={card}
               isInteractive={canInteract}
@@ -408,7 +405,7 @@ export const PlayerComponent: React.FC<PlayerProps> = ({
     return (
       <div className={styles.cardsContainer}>
         {player.cards.map((card) => (
-          <CardComponent
+          <PokerCard
             key={card.display}
             card={card}
             isInteractive={canInteract}
