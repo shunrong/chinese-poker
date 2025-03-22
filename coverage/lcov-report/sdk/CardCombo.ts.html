@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.18% </span>
+                <span class="strong">82.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>170/212</span>
+                <span class='fraction'>171/208</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.73% </span>
+                <span class="strong">75.78% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>73/99</span>
+                <span class='fraction'>72/95</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">89.09% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>49/56</span>
+                <span class='fraction'>49/55</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.97% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>149/184</span>
+                <span class='fraction'>150/180</span>
             </div>
         
             
@@ -517,22 +517,7 @@
 <a name='L452'></a><a href='#L452'>452</a>
 <a name='L453'></a><a href='#L453'>453</a>
 <a name='L454'></a><a href='#L454'>454</a>
-<a name='L455'></a><a href='#L455'>455</a>
-<a name='L456'></a><a href='#L456'>456</a>
-<a name='L457'></a><a href='#L457'>457</a>
-<a name='L458'></a><a href='#L458'>458</a>
-<a name='L459'></a><a href='#L459'>459</a>
-<a name='L460'></a><a href='#L460'>460</a>
-<a name='L461'></a><a href='#L461'>461</a>
-<a name='L462'></a><a href='#L462'>462</a>
-<a name='L463'></a><a href='#L463'>463</a>
-<a name='L464'></a><a href='#L464'>464</a>
-<a name='L465'></a><a href='#L465'>465</a>
-<a name='L466'></a><a href='#L466'>466</a>
-<a name='L467'></a><a href='#L467'>467</a>
-<a name='L468'></a><a href='#L468'>468</a>
-<a name='L469'></a><a href='#L469'>469</a>
-<a name='L470'></a><a href='#L470'>470</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L455'></a><a href='#L455'>455</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -567,22 +552,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">55x</span>
 <span class="cline-any cline-yes">55x</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -624,9 +593,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">55x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -707,7 +677,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1035,23 +1005,7 @@ export class CardCombo {
 &nbsp;
   constructor(cards: Card[] = []) {
     this._cards = [...cards];
-    if (this._cards.length === 0) {
-      this._type = ComboType.PASS;
-    } else {
-      this.analyzeComboType();
-    }
-  }
-&nbsp;
-  /**
-   * 设置牌组并分析牌型
-   */
-<span class="fstat-no" title="function not covered" >  setCards(</span>cards: Card[]): void {
-<span class="cstat-no" title="statement not covered" >    this._cards = [...cards];</span>
-<span class="cstat-no" title="statement not covered" >    if (this._cards.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      this._type = ComboType.PASS;</span>
-    } else {
-<span class="cstat-no" title="statement not covered" >      this.analyzeComboType();</span>
-    }
+    this.analyzeComboType();
   }
 &nbsp;
   /**
@@ -1093,9 +1047,10 @@ export class CardCombo {
    * 分析牌组的牌型
    */
   private analyzeComboType(): void {
-    // 对于空牌组，在构造函数和setCards中已经设置为PASS
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (this._cards.length === 0) {
-<span class="cstat-no" title="statement not covered" >      return;</span>
+    if (this._cards.length === 0) {
+      this._type = ComboType.PASS;
+      this._mainValue = 0;
+      return;
     }
 &nbsp;
     // 将牌按点数分组并排序
@@ -1477,7 +1432,7 @@ export class CardCombo {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-20T15:55:31.284Z
+                at 2025-03-22T07:02:43.558Z
             </div>
         <script src="../prettify.js"></script>
         <script>

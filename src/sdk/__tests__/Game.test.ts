@@ -1,6 +1,5 @@
 import { Game, GameState, PlayResult } from '../Game';
 import { PlayerRole } from '../Player';
-import { Card, Suit, Rank } from '../Card';
 
 describe('Game', () => {
   let game: Game;
