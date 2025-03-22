@@ -4,6 +4,7 @@ import { createStyles } from 'antd-style';
 import { Card, Player, GameState, CardCombo, ComboType } from '../sdk';
 import { useGameStore } from '../store/GameStore';
 import { PokerCard } from './PokerCard';
+import { PlayerPosition } from '../enums/PlayerPosition';
 
 const useStyles = createStyles(({ css, token }) => ({
   playerArea: css`
@@ -138,12 +139,6 @@ const useStyles = createStyles(({ css, token }) => ({
     line-height: 1 !important;
   `,
 }));
-
-export enum PlayerPosition {
-  BOTTOM,  // 底部玩家（当前玩家）
-  LEFT,    // 左侧玩家
-  RIGHT,   // 右侧玩家
-}
 
 interface PlayerAreaProps {
   player: Player;

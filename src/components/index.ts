@@ -1,2 +1,2 @@
-export * from './PlayerArea';
-export * from './PokerCard';
+export { PlayerArea } from './PlayerArea';
+export { PokerCard } from './PokerCard';

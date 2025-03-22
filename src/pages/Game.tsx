@@ -3,9 +3,9 @@ import { Alert, Button, Layout, Space, Typography, Tag, Steps, Result } from 'an
 import { TrophyOutlined } from '@ant-design/icons';
 import { createStyles } from 'antd-style';
 import { GameState, PlayerRole } from '../sdk';
-import { PlayerArea, PokerCard, PlayerPosition } from '../components';
+import { PlayerArea, PokerCard } from '../components';
 import { useGameStore } from '../store/GameStore';
-
+import { PlayerPosition } from '../enums/PlayerPosition';
 
 const { Title, Text, Paragraph } = Typography;
 const { Content, Header } = Layout;
